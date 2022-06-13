@@ -33,3 +33,12 @@ IO.puts Concat.join("Hello", "world")      #=> Hello world
 IO.puts Concat.join("Hello", "world", "_") #=> Hello_world
 IO.puts Concat.join("Hello")               #=> Hello
 IO.puts Concat.join("Hello", "World")
+
+# Accummulate values for a registered attribute
+defmodule Foo do
+  Module.register_attribute __MODULE__, :param, accumulate: true
+
+  @param :foo
+  @param :bar
+  # here @param == [:bar, :foo]
+end

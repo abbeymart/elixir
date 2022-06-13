@@ -13,10 +13,8 @@ end
 x = 1
 
 case 10 do
-  ^x ->
-    IO.puts("Not match")
-  _ ->
-    IO.puts("Default match for x: #{x}")
+  ^x -> IO.puts("Not match")
+  _ -> IO.puts("Default match for x: #{x}")
 end
 
 case {1, 2, 3} do
